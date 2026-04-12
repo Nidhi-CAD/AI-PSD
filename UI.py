@@ -435,6 +435,42 @@ def apply_theme():
             border-radius: 999px;
             padding: 8px 16px;
         }}
+                /* ========================= */
+        /* FILE UPLOADER FIX (CLOUD) */
+        /* ========================= */
+
+        [data-testid="stFileUploader"] {{
+            background: transparent !important;
+        }}
+
+        [data-testid="stFileUploader"] section {{
+            background: var(--panel) !important;
+            border: 1px solid rgba(110,160,255,0.14) !important;
+            border-radius: 18px !important;
+        }}
+
+        [data-testid="stFileUploaderDropzone"] {{
+            background: var(--panel) !important;
+            border: 1px dashed rgba(110,160,255,0.20) !important;
+            border-radius: 18px !important;
+            padding: 1rem !important;
+        }}
+
+        [data-testid="stFileUploaderDropzone"] * {{
+            color: var(--text) !important;
+        }}
+
+        [data-testid="stFileUploaderDropzone"] button {{
+            background: rgba(255,255,255,0.03) !important;
+            color: var(--text) !important;
+            border: 1px solid rgba(110,160,255,0.18) !important;
+            border-radius: 12px !important;
+        }}
+
+        [data-testid="stFileUploaderDropzone"] button:hover {{
+            border-color: var(--accent2) !important;
+            box-shadow: 0 0 0 1px rgba(57,184,255,0.35) !important;
+        }}
         </style>
         """,
         unsafe_allow_html=True,

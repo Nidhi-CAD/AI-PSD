@@ -793,7 +793,8 @@ def render_kpis(summary_df: pd.DataFrame):
             """,
             unsafe_allow_html=True,
         )
-
+total_false = summary_df["TotalFalse"].sum() if "TotalFalse" in summary_df.columns else 0
+total_ai = total_correct + total_false
   st.markdown(
     f"""
     <div class="small-muted">

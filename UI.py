@@ -796,15 +796,13 @@ def render_kpis(summary_df: pd.DataFrame):
         )
 
     st.markdown(
-        f"""
-        <div class="small-muted">
-        👉 Out of <b>{int(total_env)}</b> actual parking spots, AI detected <b>{int(total_ai)}</b> spots,
-        of which <b>{int(total_correct)}</b> were correct and it missed <b>{int(total_missed)}</b> spots.
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
+    f"""
+    <div class="small-muted">
+        👉 Out of <b>{int(total_env)}</b> actual parking spots, the AI detected <b>{int(total_ai)}</b> spots, correctly identified <b>{int(total_correct)}</b> of them, and missed <b>{int(total_missed)}</b> spots.
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
     return overall_miss, overall_correct, recall, worst_spot, best_spot
 
 

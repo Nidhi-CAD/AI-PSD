@@ -698,7 +698,6 @@ def render_low_data_warning(summary_df: pd.DataFrame):
 
 def render_kpis(summary_df: pd.DataFrame):
     total_env = summary_df["TotalEnv"].sum()
-    total_ai = summary_df["TotalAI"].sum()
     total_missed = summary_df["TotalMissed"].sum()
     total_correct = summary_df["Correct Count"].sum()
 

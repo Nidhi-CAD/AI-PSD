@@ -794,10 +794,10 @@ def render_kpis(summary_df: pd.DataFrame):
             unsafe_allow_html=True,
         )
 
-    st.markdown(
+  st.markdown(
     f"""
     <div class="small-muted">
-        👉 Out of <b>{int(total_env)}</b> actual parking spots, the AI detected <b>{int(total_ai)}</b> spots, correctly identified <b>{int(total_correct)}</b> of them, and missed <b>{int(total_missed)}</b> spots.
+        👉 Out of <b>{int(total_env)}</b> actual parking spots, the AI correctly detected <b>{int(total_correct)}</b> spots and missed <b>{int(total_missed)}</b> spots.
     </div>
     """,
     unsafe_allow_html=True,

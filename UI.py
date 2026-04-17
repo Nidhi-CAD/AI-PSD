@@ -625,7 +625,7 @@ def render_guidance():
     st.markdown(
         """
         <div class="arrow-callout">
-            <strong>Tip:</strong> In the percentage chart, <strong>more green means better detection</strong> and <strong>more red means more missed spots</strong>.
+            <strong>Tip:</strong> In the percentage chart, <strong>more dark blue means better detection</strong> and <strong>more light blue means more missed spots</strong>.
         </div>
         """,
         unsafe_allow_html=True,

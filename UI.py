@@ -675,11 +675,6 @@ def render_kpis(summary_df: pd.DataFrame):
     if valid_spots.empty:
         worst_spot = None
         best_spot = None
-        single_valid_spot = False
-    elif len(valid_spots) == 1:
-        worst_spot = valid_spots.iloc[0]
-        best_spot = None
-        single_valid_spot = True
     else:
         worst_spot = valid_spots.sort_values("Miss%", ascending=False).iloc[0]
         best_spot = valid_spots.sort_values("Miss%", ascending=True).iloc[0]
@@ -768,22 +763,7 @@ def render_kpis(summary_df: pd.DataFrame):
             """,
             unsafe_allow_html=True,
         )
-     else:
-            st.markdown(
-                f"""
-                <div class="kpi-card" style="border-left: 4px solid {GREEN_MEDIUM};">
-                    <div class="kpi-label">Best Spot Type</div>
-                    <div class="kpi-value-text">
-                        {best_spot["SpotLabel"] if best_spot is not None else "Not enough data"}
-                    </div>
-                    <div class="kpi-note">
-                        {str(best_spot["Miss%"]) + "% miss rate • n=" + str(int(best_spot["TotalEnv"])) if best_spot is not None else "Reliable sample size not available"}
-                    </div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
-
+    
     st.markdown(
         f"""
         <div class="small-muted">

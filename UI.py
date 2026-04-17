@@ -675,10 +675,11 @@ def render_kpis(summary_df: pd.DataFrame):
     if valid_spots.empty:
         worst_spot = None
         best_spot = None
-    else:
-        worst_spot = valid_spots.sort_values("Miss%", ascending=False).iloc[0]
-        best_spot = valid_spots.sort_values("Miss%", ascending=True).iloc[0]
         single_valid_spot = False
+    elif len(valid_spots) == 1:
+        worst_spot = valid_spots.iloc[0]
+        best_spot = None
+        single_valid_spot = True
     else:
         worst_spot = valid_spots.sort_values("Miss%", ascending=False).iloc[0]
         best_spot = valid_spots.sort_values("Miss%", ascending=True).iloc[0]

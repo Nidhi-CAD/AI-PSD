@@ -551,6 +551,7 @@ def add_sidebar_filters(df: pd.DataFrame) -> pd.DataFrame:
         "Env.Groundmarking",
         "Env.Contrast",
         "Env.Temperatur",
+        "Env.Location",
     ]
 
     st.sidebar.markdown("### Driver & Vehicle")

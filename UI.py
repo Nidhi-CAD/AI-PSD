@@ -1058,7 +1058,7 @@ def render_summary_table(summary_df: pd.DataFrame):
 
 
 def render_dashboard(df: pd.DataFrame):
-  df = df.copy()
+    df = df.copy()
     df.columns = [str(col).strip() for col in df.columns]
 
     if "VUT.SW" in df.columns:

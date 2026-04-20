@@ -1070,7 +1070,7 @@ def render_dashboard(df: pd.DataFrame):
         st.warning("Column 'VUT.SW' not found. Showing all rows without AI/non-AI filtering.")
         df_ai = df.copy()
     
-    filtered_df = add_sidebar_filters(df)
+    filtered_df = add_sidebar_filters(df_ai)
 
     if filtered_df.empty:
         st.warning("No data after applying filters.")

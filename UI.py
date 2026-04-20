@@ -1058,6 +1058,11 @@ def render_summary_table(summary_df: pd.DataFrame):
 
 
 def render_dashboard(df: pd.DataFrame):
+    df = df[
+        df['VUT.SW'].notna() &
+        ~df['VUT.SW'].astype(str).str.strip().eq('R36.6')
+    ].copy()
+    
     filtered_df = add_sidebar_filters(df)
 
     if filtered_df.empty:
